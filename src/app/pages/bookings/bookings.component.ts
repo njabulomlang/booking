@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { RoomService } from '../service/room.service';
 import { Router } from '@angular/router';
 import { BookingService } from '../service/booking.service';
@@ -7,6 +7,7 @@ import { room } from '../model/room';
 import arry from '../view/view.component';
 import { from } from 'rxjs';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-bookings',
@@ -14,6 +15,7 @@ import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./bookings.component.css']
 })
 export class BookingsComponent implements OnInit {
+  @Input() name;
   roomList: Array<room>;
 
   d =arry ;
@@ -40,6 +42,7 @@ this.price = this.d[0].price
     console.log(this.roomList);
   }
   ngSubmit(v){
+  
   this.booking.addBooking(v);
   this.router.navigate(["/list"]);
   }

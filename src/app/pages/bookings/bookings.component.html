@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
 
   <main class="page payment-page">
     <section class="payment-form dark">
@@ -13,7 +13,7 @@
         <div class="block-heading">
           <h2>Payment</h2>
         </div>
-        <form #Bookform="ngForm" (ngSubmit)="ngSubmit(Bookform.value)">
+        <form #Bookform="ngForm" (ngSubmit)="ngSubmit(Bookform.value)" >
       
          
           <div class="products">
@@ -32,7 +32,7 @@
             <div class="row">
               <div class="form-group col-sm-7">
                 <label for="id">Name</label>
-                <input type="text" ngModel name="name" class="form-control" placeholder="Card holder"  />
+                <input type="text" ngModel name="name" class="form-control" placeholder="Name" required />
             
               </div>
               <div class="form-group col-sm-5">
@@ -61,6 +61,7 @@
               </div>
               <div class="form-group col-sm-12">
                 <button class="btn btn-primary btn-block" mat-raised-button >Submit</button>
+                
               </div>
             </div>
           </div>

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { booking } from '../model/booking';
+import { endTimeRange } from '@angular/core/src/profile/wtf_impl';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookingService {
+
   booking: Array<booking> = [
     {
       id: 1,
@@ -28,6 +30,12 @@ export class BookingService {
     return this.booking;
   }
   addBooking(v: any) {
-    this.booking.push(v);
+
+    {
+   this.booking.push(v);
+     
+    
+    }
+
   }
 }
